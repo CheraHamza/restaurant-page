@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { watchFile } = require('fs');
+
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
 
     entry: './src/js/index.js',
 
@@ -29,11 +29,11 @@ module.exports = {
         ],
     },
 
-    devtool: 'inline-source-map',
-    devServer: {
-        static: './dist',
-        watchFiles: ['./src/**/*'],
-    },
+    // devtool: 'inline-source-map',
+    // devServer: {
+    //     static: './dist',
+    //     watchFiles: ['./src/**/*'],
+    // },
 
     plugins: [
         new HtmlWebpackPlugin({
@@ -41,7 +41,7 @@ module.exports = {
         })
     ],
 
-    optimization: {
-        runtimeChunk: 'single',
-    },
+//     optimization: {
+//         runtimeChunk: 'single',
+//     },
 }
